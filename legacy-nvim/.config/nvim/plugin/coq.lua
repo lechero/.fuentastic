@@ -1,0 +1,46 @@
+-- vim.g.coq_settings = {
+--   keymap = { recommended = false },
+--   auto_start = true,
+--   clients = {
+--     tmux = { enabled = true },
+--   },
+-- }
+--
+-- require('coq')
+--
+-- -- vim.cmd [[
+-- --   let g:coq_settings = { "keymap.recommended": v:false }
+-- --   augroup COQ
+-- --     autocmd!
+-- --     autocmd VimEnter * COQnow -s
+-- --   augroup END
+-- --   ino <silent><expr> <Esc>   pumvisible() ? "\<C-e><Esc>" : "\<Esc>"
+-- --   ino <silent><expr> <C-c>   pumvisible() ? "\<C-e><C-c>" : "\<C-c>"
+-- --   ino <silent><expr> <BS>    pumvisible() ? "\<C-e><BS>"  : "\<BS>"
+-- --   ino <silent><expr> <CR>    pumvisible() ? (complete_info().selected == -1 ? "\<C-e><CR>" : "\<C-y>") : "\<CR>"
+-- -- ]]
+--
+-- -- local status, coq = pcall(require, "coq")
+-- -- if (not status) then return end
+-- --
+-- -- vim.g.coq_settings = {
+-- --   keymap = { recommended = false },
+-- --   auto_start = 'shut-up',
+-- --   clients = {
+-- --     tmux = { enabled = true },
+-- --   },
+-- -- }
+-- --
+-- -- coq.setup {}
+-- --
+--
+-- require("coq_3p") {
+--   { src = "nvimlua",       short_name = "nLUA" },
+--   { src = "copilot",       short_name = "COP", accept_key = "<c-f>" },
+--   { src = "builtin/css" },
+--   { src = "builtin/html" },
+--   { src = "builtin/js" },
+--   { src = "builtin/php" },
+--   { src = "builtin/syntax" },
+--   { src = "builtin/xml" },
+-- }
