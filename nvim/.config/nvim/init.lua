@@ -18,7 +18,7 @@ vim.g.have_nerd_font = true
 
 -- Make line numbers default
 vim.opt.number = true
--- vim.opt.relativenumber = true
+vim.opt.relativenumber = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = 'a'
@@ -47,7 +47,7 @@ vim.opt.smartcase = true
 vim.opt.signcolumn = 'yes'
 
 -- Decrease update time
-vim.opt.updatetime = 123
+vim.opt.updatetime = 500
 
 -- Decrease mapped sequence wait time
 -- Displays which-key popup sooner
@@ -90,6 +90,7 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 -- or just use <C-\><C-n> to exit terminal mode
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
+vim.keymap.set('v', '<C-r>', '"hy:%s/<C-r>h//gc<left><left><left>')
 vim.keymap.set('n', '<leader>i', '<cmd>e ~/notes/notes.md<CR>', { silent = true })
 vim.keymap.set('n', ';tq', ':q<CR>', { silent = true })
 -- vim.keymap.set("n", ";tq", ":q<CR>", { silent = true })
@@ -102,6 +103,12 @@ vim.keymap.set('n', '<leader>2', '2gt', { silent = true })
 vim.keymap.set('n', '<leader>3', '3gt', { silent = true })
 vim.keymap.set('n', '<leader>4', '4gt', { silent = true })
 vim.keymap.set('n', '<leader>5', '5gt', { silent = true })
+
+vim.opt.conceallevel = 1
+
+vim.opt.tabstop = 2
+vim.opt.softtabstop = 2
+vim.opt.shiftwidth = 2
 
 -- GRRRR KK save
 -- vim.keymap.set("n", "<leader>w", ":w<CR>", { silent = true })
@@ -833,17 +840,23 @@ require('lazy').setup({
   -- require 'kickstart.plugins.lint',
   -- require 'kickstart.plugins.autopairs',
   -- require 'fuentastic.plugins.tokyonight',
+
   require 'fuentastic.plugins.catpuccin',
   require 'fuentastic.plugins.neo-tree',
   require 'fuentastic.plugins.alpha',
   require 'fuentastic.plugins.copilot',
   require 'fuentastic.plugins.possession',
+  require 'fuentastic.plugins.obsidian',
+  require 'fuentastic.plugins.spectre',
 
   require 'fuentastic.plugins.harpoon',
   require 'fuentastic.plugins.oil',
   require 'fuentastic.plugins.yanky',
   require 'fuentastic.plugins.vim-floaterm',
-  require 'fuentastic.plugins.noice',
+  -- require 'fuentastic.plugins.noice',
+  require 'fuentastic.plugins.trouble',
+  require 'fuentastic.plugins.copilot',
+
   -- require 'fuentastic.winmove',
 
   -- require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
